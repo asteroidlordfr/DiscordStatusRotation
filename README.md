@@ -7,13 +7,11 @@ Update the status cycle time and the status list via ``config/config.json``.
 Please be careful while using this tool and read the Disclaimer at the bottom of this page.
 
 ## ⚠️ Requirements
-You will need the following Python packages below installed. 
+You will need to run the following command in your Terminal below to get our packages so you can run the application. 
 
-``
-pip install discord.py==1.7.3
+``pip install discord.py==1.7.3``
 
 This project supports Linux, Windows and pretty much anything that can run Python.
-``
 
 ## 💚 Contribute?
 Wanna contribute?
