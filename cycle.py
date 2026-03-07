@@ -38,6 +38,9 @@ class StatusClient(discord.Client):
         else:
             os.system('clear')
 
+        print(f"Logged in as {self.user}")
+        print(f"Loaded {len(statuses)} custom statuses")
+
         self.session = requests.Session()
         self.session.headers.update({
             "Authorization": token,
