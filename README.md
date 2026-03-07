@@ -10,7 +10,7 @@ Please be careful while using this tool and read the Disclaimer at the bottom of
 You will need the following Python packages below installed. 
 
 ``
-pip install discord.py==1.7.3 requests
+pip install discord.py==1.7.3
 ``
 
 ## 💚 Contribute?
