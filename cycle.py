@@ -47,9 +47,9 @@ class StatusClient(discord.Client):
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
         })
 
-        self.loop.create_task(self.rotate_status())
+        self.loop.create_task(self.status())
 
-    async def set_status_via_api(self, emoji, text):
+    async def setstatus(self, emoji, text):
         payload = {"custom_status": {"text": text}}
         if emoji:
             payload["custom_status"]["emoji_name"] = emoji
@@ -67,7 +67,7 @@ class StatusClient(discord.Client):
         except Exception as e:
             print(f"Request failed: {e}")
 
-    async def rotate_status(self):
+    async def status(self):
         await self.wait_until_ready()
         while not self.is_closed():
             with open(config_path, "r", encoding="utf-8") as file:
@@ -82,7 +82,7 @@ class StatusClient(discord.Client):
             for item in current_statuses:
                 emoji = item.get("emoji", "")
                 text = item.get("text", "")
-                await self.set_status_via_api(emoji, text)
+                await self.setstatus(emoji, text)
                 await asyncio.sleep(current_time)
 
 client = StatusClient()
