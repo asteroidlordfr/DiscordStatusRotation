@@ -2,17 +2,14 @@
     "token": "Add your token here.",
     "statuses": [
         {
-            "type": "playing",
             "text": "Changing my status via DiscordStatusRotation on GitHub",
             "emoji": "⚙️"
         },
         {
-            "type": "playing",
             "text": "Wanna get a cool status cycle too? github.com/asteroidlordfr/DiscordStatusRotation",
             "emoji": "❤️"
         },
         {
-            "type": "playing",
             "text": "Using an awesome GitHub tool called DiscordStatusRotation",
             "emoji": "💻"
         }
