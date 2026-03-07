@@ -11,6 +11,8 @@ You will need the following Python packages below installed.
 
 ``
 pip install discord.py==1.7.3
+
+This project supports Linux, Windows and pretty much anything that can run Python.
 ``
 
 ## 💚 Contribute?
