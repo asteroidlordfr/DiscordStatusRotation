@@ -5,6 +5,7 @@ import os
 import asyncio
 import platform
 import requests
+import random
 
 if not os.path.exists("config"):
     os.makedirs("config")
@@ -37,9 +38,6 @@ class StatusClient(discord.Client):
         else:
             os.system('clear')
 
-        print(f"Logged in as {self.user}")
-        print(f"Loaded {len(statuses)} custom statuses")
-
         self.session = requests.Session()
         self.session.headers.update({
             "Authorization": token,
@@ -56,16 +54,12 @@ class StatusClient(discord.Client):
             payload["custom_status"]["emoji_id"] = None
 
         try:
-            r = await self.loop.run_in_executor(
+            await self.loop.run_in_executor(
                 None,
                 lambda: self.session.patch("https://discord.com/api/v9/users/@me/settings", json=payload)
             )
-            if r.status_code == 200:
-                print(f"Status updated: {emoji} {text}")
-            else:
-                print(f"API error {r.status_code}: {r.text}")
-        except Exception as e:
-            print(f"Request failed: {e}")
+        except Exception:
+            pass
 
     async def status(self):
         await self.wait_until_ready()
@@ -78,6 +72,8 @@ class StatusClient(discord.Client):
             if not current_statuses:
                 await asyncio.sleep(current_time)
                 continue
+
+            random.shuffle(current_statuses)
 
             for item in current_statuses:
                 emoji = item.get("emoji", "")
