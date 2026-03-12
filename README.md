@@ -26,4 +26,4 @@ In ``config.json``, make sure you always keep the status duration low so you don
 With that said, this project is for educational and personal use only.
 Only **you** are responsible for how **you** use it.
 
-This project works on any version [Python 3.8-3.11](https://www.python.org/downloads/), however we reccomend [Python 3.11.](https://www.python.org/downloads/release/python-3110/)
+This project works on any version [Python 3.8-3.14](https://www.python.org/downloads/), however we reccomend [Python 3.11.](https://www.python.org/downloads/release/python-3110/)
